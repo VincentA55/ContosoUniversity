@@ -13,5 +13,6 @@ namespace ContosoUniversity.Models
         public string Secret { get; set; }
 
         public ICollection<Enrollment> Enrollments { get; set; }
+
     }
 }
