@@ -28,7 +28,11 @@ namespace ContosoUniversity.Pages.Students
                 return NotFound();
             }
 
-            Student = await _context.Student.FirstOrDefaultAsync(m => m.ID == id);//I THINK I NEED TO UPDATE THE DATA BASE MAYBE  SCHOOLCONTEXT
+            Student = await _context.Student
+                  .Include(s => s.Enrollments)
+                  .ThenInclude(e => e.Course)
+                  .AsNoTracking()
+                  .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Student == null)
             {

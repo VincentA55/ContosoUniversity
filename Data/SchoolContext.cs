@@ -18,7 +18,7 @@ namespace ContosoUniversity.Data
         {
             modelBuilder.Entity<Course>().ToTable("Course");
             modelBuilder.Entity<Enrollment>().ToTable("Enrollment");
-            modelBuilder.Entity<Student>().ToTable("Students"); //I THINK THIS MAY BE CAUSING ISSUES NEED TO UPDATE DATA BASE MAYBE
+            modelBuilder.Entity<Student>().ToTable("Students"); 
         }
     }
 }
